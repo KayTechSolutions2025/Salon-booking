@@ -24,11 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+  <body className="bg-gradient-to-br from-black via-zinc-900 to-black text-white min-h-screen">
+  
+  <div className="fixed inset-0 -z-10">
+    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-pink-600 opacity-20 blur-[120px] rounded-full"></div>
+    <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-500 opacity-10 blur-[120px] rounded-full"></div>
+  </div>
+
+  {children}
+
+</body>
+
     </html>
   );
 }

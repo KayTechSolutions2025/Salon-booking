@@ -26,17 +26,15 @@ export default function HomePage() {
 
           <p className="mt-6 text-gray-300 text-lg leading-relaxed">
             Book your appointment instantly. Trusted by clients who value
-            quality,precision, & time.
+            quality, precision, and time.
           </p>
 
-        
-
-<Link
-  href="/book"
-  className="bg-black text-white px-6 py-3 rounded-xl"
->
-  Book Now
-</Link>
+          <Link
+            href="/book"
+            className="inline-block mt-10 bg-pink-500 hover:bg-pink-600 text-black font-semibold px-12 py-4 rounded-full transition shadow-lg shadow-pink-500/30"
+          >
+            BOOK NOW
+          </Link>
 
         </div>
 
