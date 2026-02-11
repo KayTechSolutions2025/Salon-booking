@@ -17,8 +17,8 @@ export default function BookPage() {
 
   const SALON_ID = 'cff1e5c0-ddd4-4ecd-a1eb-914a2ef27afc'
 
-  // 🔴 REPLACE WITH YOUR WHATSAPP NUMBER
-  const WHATSAPP_NUMBER = '277XXXXXXXXX'
+  // ✅ EDIT THIS NUMBER ONLY (NO +, NO SPACES)
+  const WHATSAPP_NUMBER = '27739042723'
 
   // 🔹 LOAD SERVICES
   useEffect(() => {
@@ -77,23 +77,25 @@ export default function BookPage() {
       setError('Failed to create booking')
     } else {
       setSuccess(true)
-
       // 🔹 GET SERVICE NAME
-      const service = services.find(s => s.id === serviceId)
+const service = services.find(s => s.id === serviceId)
 
-      // 🔹 WHATSAPP MESSAGE
-      const message = `Hello, I just made a booking.%0A%0A
-👤 Name: ${name}%0A
-📞 Phone: ${phone}%0A
-💄 Service: ${service?.name}%0A
-📅 Date: ${date}%0A
-⏰ Time: ${time}%0A%0A
-Please confirm my appointment.`
+// 🔹 CLEAN MESSAGE (NO LINE BREAK BUGS)
+const message =
+  "Hello, I just made a booking.%0A%0A" +
+  "Name: " + name + "%0A" +
+  "Phone: " + phone + "%0A" +
+  "Service: " + (service?.name || "N/A") + "%0A" +
+  "Date: " + date + "%0A" +
+  "Time: " + time + "%0A%0A" +
+  "Please confirm my appointment."
 
-      const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
+// 🔹 WHATSAPP URL
+const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
 
-      // OPEN WHATSAPP
-      window.open(whatsappURL, '_blank')
+// 🔹 OPEN WHATSAPP
+window.open(whatsappURL, '_blank')
+     
     }
   }
 
@@ -101,9 +103,7 @@ Please confirm my appointment.`
   if (success) {
     return (
       <section className="flex justify-center items-center py-32">
-
         <div className="w-full max-w-xl bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 text-center shadow-2xl">
-
           <div className="text-5xl mb-4">🎉</div>
 
           <h1 className="text-3xl font-bold mb-3">
@@ -114,7 +114,6 @@ Please confirm my appointment.`
             Your appointment has been successfully scheduled.
             WhatsApp confirmation has been opened.
           </p>
-
         </div>
       </section>
     )
@@ -145,7 +144,6 @@ Please confirm my appointment.`
 
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* SERVICE */}
           <select
             className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white"
             value={serviceId}
@@ -159,7 +157,6 @@ Please confirm my appointment.`
             ))}
           </select>
 
-          {/* DATE */}
           <input
             type="date"
             className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white"
@@ -167,7 +164,6 @@ Please confirm my appointment.`
             onChange={(e) => setDate(e.target.value)}
           />
 
-          {/* TIME */}
           <select
             className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white"
             value={time}
@@ -184,7 +180,6 @@ Please confirm my appointment.`
             <option>16:00</option>
           </select>
 
-          {/* NAME */}
           <input
             type="text"
             placeholder="Your name"
@@ -193,7 +188,6 @@ Please confirm my appointment.`
             onChange={(e) => setName(e.target.value)}
           />
 
-          {/* EMAIL */}
           <input
             type="email"
             placeholder="Email address"
@@ -202,7 +196,6 @@ Please confirm my appointment.`
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          {/* PHONE */}
           <input
             type="tel"
             placeholder="Phone number"
@@ -211,7 +204,6 @@ Please confirm my appointment.`
             onChange={(e) => setPhone(e.target.value)}
           />
 
-          {/* BUTTON */}
           <button
             type="submit"
             disabled={loading}

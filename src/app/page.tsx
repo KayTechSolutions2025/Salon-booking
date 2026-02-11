@@ -26,7 +26,7 @@ export default function HomePage() {
 
           <p className="mt-6 text-gray-300 text-lg leading-relaxed">
             Book your appointment instantly. Trusted by clients who value
-            quality,precision, & time.
+            quality,precision.
           </p>
 
         
@@ -81,7 +81,7 @@ export default function HomePage() {
           <p className="text-gray-300 text-lg leading-relaxed">
             We believe your time matters. Our salon delivers precise,
             high-quality beauty services in a calm, professional
-            environment — no waiting, no confusion, just results.
+            environment, no waiting, no confusion, just results.
           </p>
 
         </div>
@@ -98,11 +98,11 @@ export default function HomePage() {
           </h2>
 
           <p className="text-gray-300">
-            123 Main Street, Johannesburg
+            Roodepoort
           </p>
 
           <p className="text-gray-300 mt-2">
-            WhatsApp: 071 234 5678
+            WhatsApp: 073 904 2723
           </p>
 
           <div className="flex justify-center gap-8 mt-8 text-pink-500 font-medium">
